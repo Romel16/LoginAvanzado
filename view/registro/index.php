@@ -39,53 +39,31 @@
                                             <h5 class="mb-0">Registrarse</h5>
                                             <p class="text-muted mt-2">Regitrate para.</p>
                                         </div>
-                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
-                                            <div class="mb-3">
-                                                <label for="useremail" class="form-label">Email</label>
-                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su email" required="">  
-                                                <div class="invalid-feedback">
-                                                    Ingrese su email
-                                                </div>      
-                                            </div>
 
+                                        <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
+                                            
                                             <div class="mb-3">
-                                                <label for="nombre" class="form-label">Nombre y Apellidos</label>
-                                                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required="">  
-                                                <div class="invalid-feedback">
-                                                    Ingrese su Nombre 
-                                                </div>      
+                                                <label for="usuarioNombreApellido" class="form-label">Nombre y Apellidos</label>
+                                                <input type="text" class="form-control" id="usuarioNombreApellido" name="usuarioNombreApellido" placeholder="Ingrese su nombre" required="">  
+                                                <div class="validation-error text-danger"></div>    
                                             </div>
-
-                                            <!-- <div class="mb-3">
-                                                <label for="dni" class="form-label">DNI</label>
-                                                <input type="text" class="form-control" id="dni" placeholder="Ingrese su Dni" required="">  
-                                                <div class="invalid-feedback">
-                                                    Ingrese su Dni
-                                                </div>      
-                                            </div> -->
-                    
+                                        
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">Usuario</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Enter username" required="">
-                                                <div class="invalid-feedback">
-                                                    Ingrese su usuario
-                                                </div>  
+                                                <label for="usuarioCorreo" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="usuarioCorreo" name="usuarioCorreo" placeholder="Ingrese su email" required="">  
+                                                <div class="validation-error text-danger"></div>     
                                             </div>
                     
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">Password</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password" required="">
-                                                <div class="invalid-feedback">
-                                                    Please Enter Password
-                                                </div>       
+                                                <label for="usuarioPassword" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="usuarioPassword" name="usuarioPassword" placeholder="Enter password" required="">
+                                                <div class="validation-error text-danger"></div>      
                                             </div>
 
                                             <div class="mb-3">
                                                 <label for="userpassword" class="form-label">Confirmar Password</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password" required="">
-                                                <div class="invalid-feedback">
-                                                    Please Enter Password
-                                                </div>       
+                                                <input type="password" class="form-control" id="userpassword" name="userpassword" placeholder="Enter password" required="">
+                                                <div class="validation-error text-danger"></div>     
                                             </div>
                                             <div class="mb-4">
                                                 <p class="mb-0">Al registrarte estas aceptando los <a href="#" class="text-primary">Terminos y Condiciones</a></p>
@@ -260,7 +238,15 @@
         <script src="../../assets/js/pace.min.js"></script>
 
         <!-- validation init -->
-        <script src="../../assets/js/validation.init.js"></script>
+        <!-- <script src="../../assets/js/validation.init.js"></script> -->
+
+         <!-- Sweet Alerts js -->
+         <script src="../../assets/js/sweetalert2.min.js"></script>
+
+        <!-- validator JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+        <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
+        <script src="https://accounts.google.com/gsi/client" async></script>
 
         <script type="text/javascript" src="registro.js"></script>
 

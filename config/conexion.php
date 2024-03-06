@@ -1,6 +1,6 @@
 <?php
     /* TODO:Inicia la session (si no esta iniciada) */
-    session_start();
+     session_start(); 
 
     /* TODO: Definición de la clase Conectar */
     class Conectar{
@@ -27,7 +27,6 @@
 
         /* TODO: Método estático que devuelve la ruta base del proyecto */
         public static function ruta(){
-            return "http://localhost/PERSONAL_MesadePartes/";
+            return "http://localhost/cursos/loginavanzado/";
         }
     }
-?>

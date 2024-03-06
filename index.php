@@ -38,7 +38,7 @@
                                             <h5 class="mb-0">Bienvenido !</h5>
                                             <p class="text-muted mt-2">Inicie sesion .</p>
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+                                        <form class="custom-form mt-4 pt-2" >
                                             <div class="mb-3">
                                                 <label class="form-label">Usuario</label>
                                                 <input type="text" class="form-control" id="username" placeholder="Enter username">
