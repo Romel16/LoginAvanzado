@@ -1,3 +1,5 @@
+var timerInterval;
+
 function init() {
      /* TODO: Escucha el evento submit del formulario */
      $("#mnt_form").on("submit", function (e) {
@@ -85,8 +87,44 @@ function register() {
         contentType: false,
         processData: false,
         success: function(datos){
-                console.log(datos);
+            if (datos == 1) {
+                Swal.fire({
+                    title: "Registro",
+                    text: "Se registro correctamente. Por Favor iniciar sesion. Redireccionando en 10 segundos.",
+                    icon: "success",
+                    confirmButtonColor: "#5156be",
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: function () {
+                        Swal.showLoading();
+                        timerInterval = setInterval(function () {
+                            var content = Swal.getHtmlContainer();
+                            if (!content) return;
+                            var countdownElement = content.querySelector("b");
+                            if (countdownElement) {
+                                countdownElement.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+                            }
+                        }, 100);
+                    },
+                    didClose: function () {
+                        clearInterval(timerInterval);
+                        window.location.href = "../../index.php";
+                    },
+                }).then(function (result) {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        /* console.log("I was closed by the timer"); */
+                    }
+                });
+            } else if (datos == 0) {
+                Swal.fire({
+                    title: "Registro",
+                    text: "El correo electronico ya existe.",
+                    icon: "error",
+                    confirmButtonColor: "#5156be",
+                });
             }
+            console.log(datos);
+        }
     });
 }
 
