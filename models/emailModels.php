@@ -10,12 +10,13 @@ require_once("../models/usuarioModels.php");
 class emailModels extends PHPMailer
 {
     /*Correo que se utilizara, se debe de configurar en el hosting previamente */
-    protected $gCorreo = 'faus.15@romelweb.com';
+    protected $gCorreo = '';
 
     /*Se crea la contraseña en el hosting y se coloca aqui */
-    protected $gContrasena = 'P@ssword.123';
+    protected $gContrasena = '';
 
-    private $key = "MesaDePartesAnderCode";
+    /*colocar una llave que previamente se configuro*/
+    private $key = "";
     private $cipher = "aes-256-cbc";
 
 
@@ -31,7 +32,7 @@ class emailModels extends PHPMailer
         $textoCifrado = base64_encode($iv . $cifrado);
 
         $this->IsSMTP();
-        $this->Host = 'mail.romelweb.com';
+        $this->Host = '';
         $this->Port = 465; //Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'TLS';
@@ -70,7 +71,7 @@ class emailModels extends PHPMailer
         $datos = $usuario -> get_user_correo($usu_correo);
 
         $this->IsSMTP();
-        $this->Host = 'mail.romelweb.com';
+        $this->Host = '';
         $this->Port = 465; //Aqui el puerto
         $this->SMTPAuth = true;
         $this->SMTPSecure = 'tls';
